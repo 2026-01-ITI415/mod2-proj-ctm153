@@ -45,7 +45,7 @@ public class WeaponDefinition
     [Tooltip("Damage caused per second by the Laser [Not Implemented]")]
     public float damagePerSec = 0;
     [Tooltip("Seconds to delay between shots")]
-    public float delayBetweenShots = 0;
+    public float delayBetweenShots = 1;
     [Tooltip("Velocity of individual Projectiles")]
     public float velocity = 50;
 }
