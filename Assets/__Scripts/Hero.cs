@@ -57,6 +57,13 @@ public class Hero : MonoBehaviour
         Vector3 pos = transform.position;
         pos.x += hAxis * speed * Time.deltaTime;
         pos.y += vAxis * speed * Time.deltaTime;
+
+        // Clamp position to screen boundaries
+        float camHeight = Camera.main.orthographicSize;
+        float camWidth = camHeight * Camera.main.aspect;
+        pos.x = Mathf.Clamp(pos.x, -camWidth, camWidth);
+        pos.y = Mathf.Clamp(pos.y, -camHeight, camHeight);
+
         transform.position = pos;
 
         // Rotate the ship to make it feel more dynamic                       // e
